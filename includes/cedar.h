@@ -73,9 +73,8 @@ public:
   };
 
   da() : tracking_node(), _array(0), _ninfo(0), _block(0), _bheadF(0), _bheadC(0), _bheadO(0), _capacity(0), _size(0), _no_delete(false), _reject() {
-
     STATIC_ASSERT(sizeof(value_type) <= sizeof(int), value_type_is_not_supported___maintain_a_value_array_by_yourself_and_store_its_index);
-
+    //
     _initialize();
   }
 

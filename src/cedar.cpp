@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
     std::exit(1);
   }
   //
-  typedef cedar::da<int> trie_t;
+  typedef cedar::da<int> trie_t; // value_type => int
   trie_t trie;
   if (trie.open(argv[1])) {
     std::fprintf(stderr, "cannot open: %s\n", argv[1]);
