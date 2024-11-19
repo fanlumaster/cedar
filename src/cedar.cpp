@@ -3,7 +3,8 @@
  */
 #include <cstdio>
 #include <cstdlib>
-#include <cedar.h>
+// #include "cedar.h"
+#include "cedarpp.h"
 
 static const size_t NUM_RESULT = 1024;
 
@@ -26,6 +27,12 @@ int main(int argc, char **argv) {
   while (std::fgets(line, 8192, stdin)) {
     printf("The word you input：%s", line);
     line[std::strlen(line) - 1] = '\0';
+    //
+    std::fprintf(stdout, "exactMatchSearch():\n");
+    if (const int n = trie.exactMatchSearch<int>(line)) {
+      std::fprintf(stdout, "%s: found, lineNo=%ld\n", line, n);
+    }
+    //
     std::fprintf(stdout, "commonPrefixSearch():\n");
     if (const size_t n = trie.commonPrefixSearch(line, result_pair, NUM_RESULT)) {
       std::fprintf(stdout, "%s: found, num=%ld ", line, n);

@@ -3,7 +3,8 @@
  */
 #include <cstdio>
 #include <cstdlib>
-#include "cedar.h"
+// #include "cedar.h"
+#include "cedarpp.h"
 
 int main(int argc, char **argv) {
   if (argc < 3) {
